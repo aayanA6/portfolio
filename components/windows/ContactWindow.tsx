@@ -3,7 +3,7 @@ import { profile, socials } from "@/lib/content";
 export default function ContactWindow() {
   return (
     <div className="content">
-      <p>The fastest way to reach me is email — I reply quickly.</p>
+      <p>Want to talk? Email me. I actually check it, usually reply fast.</p>
       <fieldset>
         <legend>Contact</legend>
         <div style={{ display: "flex", flexDirection: "column", gap: 8, padding: 6 }}>

@@ -10,12 +10,12 @@ export default function ProjectsWindow() {
   const mobile = useIsMobile();
 
   const openProject = (index: number, title: string) =>
-    open("project", { id: `project:${title}`, title: `${title} — Project`, props: { index } });
+    open("project", { id: `project:${title}`, title: `${title} - Project`, props: { index } });
 
   return (
     <div>
       <p style={{ padding: "8px 10px 2px", color: "#444" }}>
-        {projects.length} items — double-click a project to open it (tap on mobile).
+        {projects.length} items. Double click a project to open it (or tap, on mobile).
       </p>
       <div className="folder-grid">
         {projects.map((p, i) => (

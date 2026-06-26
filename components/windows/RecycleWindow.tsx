@@ -11,7 +11,7 @@ export default function RecycleWindow() {
         </div>
       </div>
       <p style={{ padding: "8px 12px", color: "#444" }}>
-        (The previous 3D chrome-blob site. Kept here for sentimental reasons.)
+        (My old portfolio. It had a fancy spinning 3D blob. This one is more fun, fight me.)
       </p>
     </div>
   );

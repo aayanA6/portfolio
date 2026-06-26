@@ -8,7 +8,7 @@ export default function ExperienceWindow() {
           <legend>{t.when}</legend>
           <div style={{ padding: 4 }}>
             <div style={{ fontWeight: 700 }}>
-              {t.title} — {t.org}
+              {t.title} - {t.org}
             </div>
             <div style={{ color: "#444", marginBottom: 5 }}>{t.where}</div>
             <ul style={{ margin: 0, paddingLeft: 18 }}>

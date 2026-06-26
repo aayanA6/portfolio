@@ -8,12 +8,10 @@ export default function WelcomeWindow() {
   return (
     <div className="content">
       <p style={{ fontSize: 13, fontWeight: 700 }}>👋 Hi, I&apos;m {profile.name}.</p>
+      <p>{profile.blurb}</p>
       <p>
-        {profile.role}. {profile.blurb}
-      </p>
-      <p>
-        This little desktop <em>is</em> the portfolio — double-click the icons to look around
-        (just tap on mobile). A good place to start:
+        This whole desktop is my portfolio. Double click the icons to look around (or tap, on mobile).
+        Good places to start:
       </p>
       <div style={{ display: "flex", gap: 8, marginTop: 6, flexWrap: "wrap" }}>
         <button onClick={() => open("projects")}>My Projects</button>

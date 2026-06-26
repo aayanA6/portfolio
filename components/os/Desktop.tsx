@@ -26,7 +26,8 @@ export default function Desktop() {
     return (
       <div className="shutdown" onClick={() => setShutdown(false)}>
         <p>It&apos;s now safe to turn off your computer.</p>
-        <button onClick={() => setShutdown(false)}>← Back to desktop</button>
+        <p style={{ fontSize: 13, opacity: 0.8 }}>(Or click to come back. I won&apos;t tell anyone.)</p>
+        <button onClick={() => setShutdown(false)}>Back to desktop</button>
       </div>
     );
   }

@@ -12,11 +12,11 @@ export const profile = {
   // Short, punchy role line under your name.
   role: "Full Stack Developer",
   // The rotating words in the hero (kept short).
-  taglines: ["Full Stack Developer", "AI tinkerer", "CS @ Laurier", "Hackathon shipper"],
-  location: "Waterloo & Milton, Ontario 🇨🇦",
+  taglines: ["Full Stack Developer", "Problem Solver", "CS Student", "Builder"],
+  location: "Waterloo & Milton, Ontario 🍁",
   // One or two sentences. No jargon. Who you are, plainly.
   blurb:
-    "I build full-stack web apps — and lately, AI-powered tools — that are fast, useful, and actually solve the problem. Computer Science student at Wilfrid Laurier who ships at hackathons: an accessibility auditor, a self-healing infra dashboard, and a charity video platform, all built under deadline.",
+    "Full stack dev, CS student at Laurier, and a sucker for a good hackathon deadline. I build web apps that are fast, useful, and actually do something. Recent ones: an AI accessibility auditor, a self healing infra dashboard, and a charity video app.",
   email: "atif4919@mylaurier.ca",
   // Optional — set to "" to hide the phone everywhere.
   phone: "437-450-0677",
@@ -31,10 +31,10 @@ export const socials = {
 
 /** Quick at-a-glance stats — the things a recruiter scans for first. Keep them honest. */
 export const stats = [
-  { value: "🍁 Canada", label: "Based & authorized to work · remote-friendly" },
-  { value: "Full-stack", label: "React · Next.js · Node · FastAPI" },
-  { value: "Open", label: "Internships, co-op & freelance" },
-  { value: "2027", label: "B.Sc Computer Science — Wilfrid Laurier" },
+  { value: "🍁 Canada", label: "Based in Canada, open to remote" },
+  { value: "Full-stack", label: "React, Next.js, Node, FastAPI" },
+  { value: "Open", label: "Open to internships" },
+  { value: "2028", label: "B.Sc Computer Science, Laurier" },
 ];
 
 export type Project = {
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     title: "a11y.sense",
     tagline: "AI accessibility QA sandbox · GenAIGenesis 2026",
     description:
-      "Paste any live URL and get a full WCAG audit. A Playwright + Gemini pipeline runs 5 parallel accessibility audits over the DOM, screenshots, and element coordinates — then maps every issue onto an interactive 3D human skeleton across five disability-focused body systems. One click exports a developer-ready Markdown/PDF report with CSS selectors and exact fixes.",
+      "Paste any live URL and get a full accessibility audit. It runs five Gemini powered checks in parallel over the page's DOM, screenshots, and layout, then maps every issue onto an interactive 3D human body, one system per disability type. When you're done it exports a clean Markdown or PDF report with the exact CSS selectors and fixes, ready to drop straight into a pull request.",
     tags: ["Next.js", "Three.js", "Gemini AI", "Playwright", "WCAG"],
     repo: "https://github.com/ebad66/a11y.sense",
     highlight: true,
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     title: "Ts-Rx",
     tagline: "Self-healing dashboard for Tailscale networks · HackCanada 2026",
     description:
-      "An AI monitoring agent that watches up to 100 self-hosted Tailscale services. It pairs Datadog telemetry with Gemini diagnostics to detect failures and generate targeted fixes — surfaced through a custom 'Doctor' tab injected into the Tailscale UI. A self-improving pipeline saves each fix into service-specific knowledge bases so recurring incidents resolve faster.",
+      "An AI monitoring agent that watches up to 100 self hosted Tailscale services. It pairs Datadog telemetry with Gemini diagnostics to catch failures and suggest targeted fixes, all surfaced in a custom Doctor tab built right into the Tailscale UI. Every fix it generates gets saved to a service specific knowledge base, so repeat incidents get solved faster over time.",
     tags: ["Python", "FastAPI", "React", "Gemini AI", "Datadog"],
     repo: "https://github.com/Shay350/Ts-Rx",
     accent: "#a78bfa",
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     title: "Scroll4Good",
     tagline: "Charity impact platform · UmmahHacks 2026",
     description:
-      "A TikTok-style short-form video platform that connects donors directly to people in need — driving 15+ completed donations across 20+ early users via Stripe. Backend hardened with JWT auth, role-based access, rate limiting, Zod validation, and a Gemini risk-scoring pipeline, plus a gamified seed-to-forest system that visualizes each donor's impact.",
+      "A TikTok style platform for charitable giving. Verified people in need post short video requests, and donors give to them directly through Stripe. It drove 15+ donations across 20+ early users, kept safe with JWT auth, role based access, rate limiting, and a Gemini risk scoring pipeline. It even has a seed to forest system that grows as you give.",
     tags: ["Node.js", "Express", "MongoDB", "Stripe", "Gemini AI"],
     repo: "https://github.com/zaidsaiyed/Scroll4Good",
     accent: "#f472b6",
@@ -99,7 +99,7 @@ export type TimelineItem = {
 
 export const timeline: TimelineItem[] = [
   {
-    when: "Sep 2023 — May 2027",
+    when: "Sep 2023 to May 2028",
     title: "B.Sc, Computer Science",
     org: "Wilfrid Laurier University",
     where: "Waterloo, ON",
@@ -121,13 +121,13 @@ export const timeline: TimelineItem[] = [
     ],
   },
   {
-    when: "Jun 2024 — Present",
+    when: "Jun 2024 to Present",
     title: "Customer Experience Representative",
     org: "Canadian Green Tech",
     where: "Burlington, ON",
     kind: "work",
     points: [
-      "Ran residential solar feasibility analysis — converting household energy use and site constraints into PV system sizing and ROI projections using utility tariff data and shading/production models.",
+      "Ran residential solar feasibility analysis, turning household energy use and site constraints into PV system sizing and ROI projections using utility tariff data and shading and production models.",
       "Operated Salesforce CRM to maintain the pipeline and keep clean handoffs between sales and technical design teams.",
     ],
   },

@@ -13,7 +13,7 @@ export default function ResumeWindow() {
       </div>
       <iframe
         src={profile.resumeUrl}
-        title="Résumé — Aayan Atif"
+        title="Résumé - Aayan Atif"
         style={{ flex: 1, border: "none", background: "#fff", minHeight: 280 }}
       />
     </div>

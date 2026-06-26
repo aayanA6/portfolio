@@ -16,13 +16,13 @@ export type WinType =
 export type WinDef = { title: string; w: number; h: number; single?: boolean };
 
 export const WINDOW_DEFS: Record<WinType, WinDef> = {
-  welcome: { title: "Welcome.txt — Notepad", w: 470, h: 330, single: true },
-  about: { title: "About Me.txt — Notepad", w: 470, h: 360, single: true },
+  welcome: { title: "Welcome.txt - Notepad", w: 470, h: 330, single: true },
+  about: { title: "About Me.txt - Notepad", w: 470, h: 360, single: true },
   projects: { title: "My Projects", w: 500, h: 330, single: true },
   project: { title: "Project", w: 470, h: 400 },
-  skills: { title: "Skills — Control Panel", w: 460, h: 360, single: true },
+  skills: { title: "Skills - Control Panel", w: 460, h: 360, single: true },
   experience: { title: "Experience", w: 540, h: 400, single: true },
-  resume: { title: "Résumé — Aayan_Atif.pdf", w: 660, h: 580, single: true },
+  resume: { title: "Résumé - Aayan_Atif.pdf", w: 660, h: 580, single: true },
   contact: { title: "Contact", w: 390, h: 320, single: true },
   minesweeper: { title: "Minesweeper", w: 210, h: 300, single: true },
   recycle: { title: "Recycle Bin", w: 420, h: 280, single: true },
