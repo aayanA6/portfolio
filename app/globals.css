@@ -1,0 +1,420 @@
+@import "tailwindcss";
+
+/* Reliable local copy of the Win98 system font (also referenced by 98.css). */
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/ms_sans_serif.woff2) format("woff2"), url(/ms_sans_serif.woff) format("woff");
+}
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  font-style: normal;
+  font-weight: 700;
+  src: url(/ms_sans_serif_bold.woff2) format("woff2"), url(/ms_sans_serif_bold.woff) format("woff");
+}
+
+:root {
+  --teal: #008080;
+  --silver: #c0c0c0;
+  --navy: #000080;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--teal);
+  font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 11px;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* ── Desktop ─────────────────────────────────────────────────────────── */
+.desktop {
+  position: fixed;
+  inset: 0;
+  background: var(--teal);
+  overflow: hidden;
+}
+
+.desktop-icons {
+  position: absolute;
+  inset: 8px 8px 40px 8px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 4px 10px;
+}
+@media (max-width: 768px) {
+  .desktop-icons {
+    flex-direction: row;
+    inset: 8px 8px 40px 8px;
+  }
+}
+
+.desktop-icon {
+  width: 80px;
+  min-height: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 4px;
+  cursor: default;
+  text-align: center;
+}
+.desktop-icon img,
+.desktop-icon .icon-glyph {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.35));
+}
+.desktop-icon span {
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 1px 3px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+.desktop-icon.selected span {
+  background: var(--navy);
+  outline: 1px dotted #fff;
+  outline-offset: -1px;
+}
+.desktop-icon.selected img,
+.desktop-icon.selected .icon-glyph {
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.35)) brightness(0.85) sepia(0.4) hue-rotate(180deg);
+}
+
+/* ── Window positioning shell (98.css styles the chrome) ─────────────── */
+.win {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  min-width: 240px;
+}
+.win .window-body {
+  flex: 1;
+  overflow: auto;
+  margin: 3px;
+}
+.win .title-bar {
+  cursor: grab;
+}
+.win .title-bar:active {
+  cursor: grabbing;
+}
+.win.mobile {
+  inset: 0 0 32px 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* ── Taskbar ─────────────────────────────────────────────────────────── */
+.taskbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+  background: var(--silver);
+  box-shadow: inset 0 1px #fff, inset 0 2px #dfdfdf;
+  z-index: 9000;
+}
+.taskbar-tasks {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+  overflow: hidden;
+}
+.taskbar-task {
+  min-width: 120px;
+  max-width: 160px;
+  height: 23px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tray {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 23px;
+  padding: 0 8px;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey;
+}
+
+/* Start menu */
+.start-menu {
+  position: fixed;
+  bottom: 32px;
+  left: 2px;
+  width: 200px;
+  z-index: 9500;
+  background: var(--silver);
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  display: flex;
+  padding: 3px;
+}
+.start-menu-rail {
+  width: 26px;
+  background: linear-gradient(var(--navy), #1084d0);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  padding: 8px 2px;
+  letter-spacing: 1px;
+}
+.start-menu-items {
+  flex: 1;
+  padding: 2px;
+}
+.start-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  font-size: 12px;
+  cursor: default;
+}
+.start-item:hover {
+  background: var(--navy);
+  color: #fff;
+}
+.start-divider {
+  height: 1px;
+  margin: 3px 1px;
+  box-shadow: inset 0 1px grey, inset 0 2px #fff;
+}
+
+/* Pixel-art glyph helper for icons drawn in SVG */
+.icon-glyph {
+  display: inline-block;
+}
+
+/* Pressed state for taskbar / Start buttons (toggled, not just :active) */
+.taskbar button.pressed,
+.taskbar-task.pressed {
+  box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey !important;
+}
+
+/* ── Boot splash ─────────────────────────────────────────────────────── */
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  cursor: pointer;
+}
+.boot-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.boot-words {
+  display: flex;
+  flex-direction: column;
+}
+.boot-bar {
+  width: 300px;
+  height: 18px;
+  background: #000;
+  overflow: hidden;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+}
+.boot-bar-fill {
+  height: 100%;
+  width: 70px;
+  background: repeating-linear-gradient(90deg, #000 0 3px, #1084d0 3px 15px);
+  animation: bootmove 1.1s linear infinite;
+}
+@keyframes bootmove {
+  from {
+    transform: translateX(-70px);
+  }
+  to {
+    transform: translateX(300px);
+  }
+}
+.boot-hint {
+  position: absolute;
+  bottom: 22px;
+  color: #666;
+  font-size: 11px;
+}
+
+/* ── Shutdown screen (Start ▸ Shut Down gag) ─────────────────────────── */
+.shutdown {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #000;
+  color: #ffb000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+}
+.shutdown p {
+  font-size: 22px;
+}
+
+/* ── Window content helpers ──────────────────────────────────────────── */
+.folder-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px;
+}
+.folder-item {
+  width: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 4px;
+  cursor: default;
+  text-align: center;
+  outline: none;
+}
+.folder-item span {
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 1px 3px;
+}
+.folder-item:focus span,
+.folder-item.selected span {
+  background: var(--navy);
+  color: #fff;
+  outline: 1px dotted #fff;
+  outline-offset: -1px;
+}
+.tag98 {
+  font-size: 11px;
+  padding: 2px 7px;
+  background: #dfdfdf;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey;
+}
+.content {
+  padding: 12px;
+  line-height: 1.55;
+}
+.content p {
+  margin: 0 0 8px;
+}
+.content a {
+  color: var(--navy);
+}
+
+/* ── Minesweeper ─────────────────────────────────────────────────────── */
+.ms {
+  padding: 6px;
+  display: inline-block;
+}
+.ms-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  margin-bottom: 5px;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+}
+.ms-lcd {
+  background: #000;
+  color: #f00;
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+  padding: 1px 4px;
+  min-width: 32px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.ms-face {
+  min-width: 26px !important;
+  min-height: 26px !important;
+  padding: 0 !important;
+  font-size: 14px;
+  color: #000 !important;
+  text-shadow: none !important;
+}
+.ms-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 20px);
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+  padding: 2px;
+  background: var(--silver);
+}
+.ms-cell {
+  width: 20px;
+  height: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  background: var(--silver);
+  box-shadow: inset -1px -1px grey, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+}
+.ms-cell.revealed {
+  box-shadow: inset 0 0 0 1px #808080;
+  background: #c0c0c0;
+}
+.ms-cell.mine {
+  background: #f00;
+}
+.ms-1 { color: #0000ff; }
+.ms-2 { color: #008000; }
+.ms-3 { color: #ff0000; }
+.ms-4 { color: #000080; }
+.ms-5 { color: #800000; }
+.ms-6 { color: #008080; }
+.ms-7 { color: #000000; }
+.ms-8 { color: #808080; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fade 0.18s ease-out;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
