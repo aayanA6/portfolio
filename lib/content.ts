@@ -121,14 +121,15 @@ export const timeline: TimelineItem[] = [
     ],
   },
   {
-    when: "Jun 2024 to Present",
-    title: "Customer Experience Representative",
-    org: "Canadian Green Tech",
-    where: "Burlington, ON",
-    kind: "work",
+    when: "Oct 2022 to Jul 2023",
+    title: "Robotics Team Member",
+    org: "CKSS Robotics Club",
+    where: "Milton, ON",
+    kind: "leadership",
     points: [
-      "Ran residential solar feasibility analysis, turning household energy use and site constraints into PV system sizing and ROI projections using utility tariff data and shading and production models.",
-      "Operated Salesforce CRM to maintain the pipeline and keep clean handoffs between sales and technical design teams.",
+      "Built a competition robot with a 20-person team for the FIRST Robotics Competition, working across design, programming, and assembly.",
+      "Diagnosed and fixed 30+ technical issues through design and testing to keep it running reliably under pressure.",
+      "Took 1st place at the Ontario Regional FIRST Robotics Competition.",
     ],
   },
 ];
