@@ -92,6 +92,15 @@ const glyphs: Record<string, JSX.Element> = {
       <rect x="14.4" y="13" width="3.2" height="10" fill="#1084d0" />
     </>
   ),
+  cert: (
+    <>
+      <rect x="6" y="3" width="20" height="26" rx="1" fill="#fff" stroke="#000" />
+      <path d="M10 9h12M10 13h12M10 17h7" stroke="#9a9a9a" strokeWidth="1.2" />
+      <path d="M18 24l-1.5 5 3.5-2 3.5 2-1.5-5" fill="#c0392b" stroke="#7a1f17" strokeWidth="0.8" />
+      <circle cx="20" cy="21" r="5" fill="#ffd23f" stroke="#a8791a" />
+      <circle cx="20" cy="21" r="2.2" fill="#fff3c4" stroke="#a8791a" strokeWidth="0.8" />
+    </>
+  ),
 };
 
 /** The wavy 4-pane Windows flag, used on the Start button and boot screen. */

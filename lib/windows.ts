@@ -11,7 +11,9 @@ export type WinType =
   | "resume"
   | "contact"
   | "minesweeper"
-  | "recycle";
+  | "recycle"
+  | "certifications"
+  | "certificate";
 
 export type WinDef = { title: string; w: number; h: number; single?: boolean };
 
@@ -26,6 +28,8 @@ export const WINDOW_DEFS: Record<WinType, WinDef> = {
   contact: { title: "Contact", w: 390, h: 320, single: true },
   minesweeper: { title: "Minesweeper", w: 210, h: 300, single: true },
   recycle: { title: "Recycle Bin", w: 420, h: 280, single: true },
+  certifications: { title: "Certifications", w: 470, h: 300, single: true },
+  certificate: { title: "Certificate", w: 720, h: 600 },
 };
 
 export type DesktopItem = {
@@ -41,6 +45,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
   { id: "about", label: "About Me", icon: "notepad", type: "about" },
   { id: "skills", label: "Skills", icon: "controls", type: "skills" },
   { id: "experience", label: "Experience", icon: "briefcase", type: "experience" },
+  { id: "certifications", label: "Certifications", icon: "cert", type: "certifications" },
   { id: "resume", label: "Résumé", icon: "pdf", type: "resume" },
   { id: "contact", label: "Contact", icon: "mail", type: "contact" },
   { id: "minesweeper", label: "Minesweeper", icon: "mine", type: "minesweeper" },

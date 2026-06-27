@@ -79,6 +79,18 @@ export const projects: Project[] = [
   },
 ];
 
+export type Certification = {
+  title: string;
+  issuer: string;
+  year: string;
+  file: string; // PDF path under /public
+};
+
+/** Certificates. Drop the PDF in /public/certs and add an entry here. */
+export const certifications: Certification[] = [
+  { title: "Claude 101", issuer: "Anthropic", year: "2026", file: "/certs/claude-101.pdf" },
+];
+
 /** Grouped skills, straight from the résumé. Edit freely. */
 export const skills: { group: string; items: string[] }[] = [
   { group: "Languages", items: ["TypeScript", "JavaScript", "Python", "Java", "C", "C++", "SQL"] },

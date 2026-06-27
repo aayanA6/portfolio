@@ -9,6 +9,8 @@ import ResumeWindow from "@/components/windows/ResumeWindow";
 import ContactWindow from "@/components/windows/ContactWindow";
 import MinesweeperWindow from "@/components/windows/MinesweeperWindow";
 import RecycleWindow from "@/components/windows/RecycleWindow";
+import CertificationsWindow from "@/components/windows/CertificationsWindow";
+import CertificateWindow from "@/components/windows/CertificateWindow";
 
 export function renderWindowContent(win: WindowState) {
   switch (win.type) {
@@ -32,6 +34,10 @@ export function renderWindowContent(win: WindowState) {
       return <MinesweeperWindow />;
     case "recycle":
       return <RecycleWindow />;
+    case "certifications":
+      return <CertificationsWindow />;
+    case "certificate":
+      return <CertificateWindow index={(win.props?.index as number) ?? 0} />;
     default:
       return null;
   }
