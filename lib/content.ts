@@ -19,7 +19,7 @@ export const profile = {
     "Full stack dev, CS student at Laurier, and a sucker for a good hackathon deadline. I build web apps that are fast, useful, and actually do something. Recent ones: an AI accessibility auditor, a self healing infra dashboard, and a charity video app.",
   email: "atif4919@mylaurier.ca",
   // Optional — set to "" to hide the phone everywhere.
-  phone: "437-450-0677",
+  phone: "647-616-8119",
   resumeUrl: "/Aayan_Atif_Resume.pdf", // PDF lives in /public
 };
 
@@ -77,6 +77,14 @@ export const projects: Project[] = [
     repo: "https://github.com/zaidsaiyed/Scroll4Good",
     accent: "#f472b6",
   },
+  {
+    title: "Neural Network From Scratch",
+    tagline: "Personal project · Python, NumPy",
+    description:
+      "A neural network built from the ground up with NumPy, no ML framework involved. Implemented SGD and Adam optimizers from scratch and compared their convergence behavior on the same classification task, pushing accuracy from 65% to 97% on a three-class dataset.",
+    tags: ["Python", "NumPy"],
+    accent: "#34d399",
+  },
 ];
 
 export type Certification = {
@@ -95,9 +103,12 @@ export const certifications: Certification[] = [
 export const skills: { group: string; items: string[] }[] = [
   { group: "Languages", items: ["TypeScript", "JavaScript", "Python", "Java", "C", "C++", "SQL"] },
   { group: "Frontend", items: ["React", "Next.js", "Three.js", "Tailwind CSS", "HTML/CSS"] },
-  { group: "Backend & APIs", items: ["Node.js", "Express", "FastAPI", "MongoDB", "REST APIs"] },
+  {
+    group: "Backend & APIs",
+    items: ["Node.js", "Express", "Spring Boot", "FastAPI", "PostgreSQL", "MongoDB", "Redis", "REST APIs", "JWT"],
+  },
   { group: "AI / ML", items: ["Gemini AI", "PyTorch", "Playwright", "Machine Learning"] },
-  { group: "DevOps & Cloud", items: ["Git", "Docker", "AWS", "Azure", "CI/CD"] },
+  { group: "DevOps & Cloud", items: ["Git", "Docker", "AWS", "AWS SNS", "Linux", "Maven", "Datadog", "CI/CD"] },
 ];
 
 export type TimelineItem = {
@@ -114,11 +125,24 @@ export const timeline: TimelineItem[] = [
     when: "Sep 2023 to May 2028",
     title: "B.Sc, Computer Science",
     org: "Wilfrid Laurier University",
-    where: "Waterloo, ON",
+    where: "Milton, ON",
     kind: "education",
     points: [
       "Bachelor of Science in Computer Science (in progress).",
       "Coursework: Data Structures & Algorithms I & II, Discrete Math, OOP, Microprocessors, Linear Algebra.",
+      "Director of Technology at BeLaurier.",
+    ],
+  },
+  {
+    when: "Sep 2026 to Present",
+    title: "Full-stack Developer Intern",
+    org: "BookMyHelp",
+    where: "Mississauga, ON",
+    kind: "work",
+    points: [
+      "Developing and maintaining backend communication workflows for BookMyHelp's service marketplace using Java, Spring Boot, PostgreSQL, Redis, Thymeleaf, and REST APIs across booking, SMS, email, and notification systems.",
+      "Improved SMS reliability and delivery efficiency by redesigning booking notifications with input sanitization, message-length controls, GSM-friendly character normalization, and defensive handling for malformed or missing customer data.",
+      "Improved transactional email infrastructure by fixing packaged-JAR resource loading, implementing inline CID image delivery, and replacing duplicated email markup with reusable Thymeleaf components.",
     ],
   },
   {
